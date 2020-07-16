@@ -1,0 +1,176 @@
+.back {
+  background: linear-gradient(145deg, #f05a28 0px, #e80a89 100%);
+  position: relative;
+  height: 110vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.parent {
+  width: 100%;
+  h2 {
+    text-align: center;
+    color: white;
+    font-size: 3em;
+  }
+}
+
+.text-photo {
+  padding: 120px 90px;
+  // display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .box {
+    width: 50%;
+    img {
+      width: 100%;
+    }
+    .buttons {
+      margin-top: 100px;
+      .first-link {
+        position: relative;
+        width: 200px;
+        height: 80px;
+        background-color: black;
+        overflow: hidden;
+        border-radius: 40px;
+        margin-top: 15px;
+        .link {
+          position: absolute;
+          top: 28px;
+          left: 60px;
+          width: 100px;
+          height: 50px;
+          z-index: 5;
+          color: white;
+          font-size: 18px;
+        }
+      }
+      .ball {
+        position: absolute;
+        top: 28px;
+        left: -35px;
+        width: 25px;
+        height: 25px;
+        background: white;
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+      }
+      a:hover {
+        cursor: pointer;
+        border: 1px solid #ff4a75;
+      }
+    }
+  }
+  .right {
+    background-image: url("./test.png");
+    background-image: url(/static/media/test.67269d5d.png);
+    position: relative;
+    bottom: 430px;
+    left: 454px;
+    width: 812px;
+    height: 594px;
+    background-size: cover;
+  }
+}
+
+// start wave
+.wave,
+.wave::before,
+.wave::after {
+  width: 100%;
+  height: 143px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: url("./../../assets/wave.png");
+}
+
+.wave {
+  animation: animate-reverse 30s linear infinite;
+}
+
+.wave::before {
+  content: "";
+  animation: animate 30s linear infinite;
+  opacity: 0.4;
+}
+
+.wave::after {
+  content: "";
+  animation: animate 30s linear infinite;
+  animation-delay: 20s;
+  opacity: 0.6;
+}
+
+@keyframes animate-reverse {
+  0% {
+    background-position: 1360px;
+  }
+  100% {
+    background-position: 0;
+  }
+}
+@keyframes animate {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 1360px;
+  }
+}
+
+/* .art-box {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  background: #ffdbef;
+  padding: 30px 0;
+  padding-top: 500px;
+  transition: all 0.8s ease-in-out;
+} 
+ .art-text {
+  background: white;
+  margin: 40px;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 300px;
+  width: 25%;
+} 
+ h3 {
+  padding: 20px;
+  color: black;
+} 
+ p {
+  padding: 20px;
+  color: black;
+  background: none;
+  font-size: 1.2em;
+} 
+.portfolio {
+  width: 100%;
+  padding: 20px 0;
+  background: red;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.portfolio .pro {
+  width: 30%;
+  height: 250px;
+  margin: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.portfolio .pro img {
+  width: 100%;
+}
+*/
+
+.photo-parent {
+  background-image: url("./test.png");
+  width: 400px;
+  height: 400px;
+}

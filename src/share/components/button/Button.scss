@@ -1,0 +1,14 @@
+.default_button {
+  padding: 7px 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  color: white;
+  font-family: "OpenSansbold";
+  font-size: 1rem;
+  width: 7rem;
+}
+
+.default_button:hover {
+  cursor: pointer;
+}

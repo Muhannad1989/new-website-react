@@ -1,0 +1,13 @@
+$thm-red: green;
+$thm-white: white;
+$size: 50px;
+
+.btn {
+  background-color: $thm-red;
+  color: $thm-white;
+  border: none;
+  padding: 3rem 5rem;
+  font-size: $size;
+  border-radius: 15px;
+  color: $thm-white;
+}

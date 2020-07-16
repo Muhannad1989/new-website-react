@@ -1,0 +1,15 @@
+.snow {
+  animation: anim 10s linear infinite;
+  transition: all 0.5s ease-in-out;
+}
+
+@keyframes anim {
+  0% {
+    transform: rotate(360deg);
+    top: -80px;
+  }
+  100% {
+    top: 550px;
+    transform: rotate(0deg);
+  }
+}
