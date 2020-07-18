@@ -5,7 +5,7 @@ import PaginationContent from "./PaginationContent";
 import PaginationButtons from "./PaginationButtons";
 import "./Pagination.scss";
 
-const Pagination = () => {
+const Pagination = ({ setActiveLink }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
   const [posts, setPosts] = useState([]);
@@ -15,7 +15,8 @@ const Pagination = () => {
   const currentPosts = posts.slice(firstPost, lastPost);
   useEffect(() => {
     fetchData();
-  }, []);
+    setActiveLink("pagination");
+  }, [setActiveLink]);
 
   const url = "https://jsonplaceholder.typicode.com/posts";
 

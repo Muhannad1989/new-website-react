@@ -12,26 +12,27 @@ import "./App.scss";
 import "./share/style/grideSystem.scss";
 
 const App = () => {
-  const [active, setActive] = useState(null);
-  const setActiveLink = (e) => {
-    setActive(e);
-    console.log("running");
-  };
+  const [active, setActiveLink] = useState("");
+
   return (
     <Router>
       <Header active={active} />
       <Switch>
-        <Route path='/' exact name='home' component={Home}></Route>
-        <Route path='/home' exact name='home' component={Home}></Route>
-        <Route path='/winter' exact name='winter' component={Winter}></Route>
-        <Route
-          path='/slider'
-          exact
-          name='slider'
-          setActiveLink={() => setActiveLink("dd")}
-          component={Slider}
-        ></Route>
-        <Route path='/pagination' exact name='pagination' component={Pagination}></Route>
+        <Route path='/' exact name='home'>
+          <Home setActiveLink={setActiveLink} />
+        </Route>
+        <Route path='/home' exact name='home'>
+          <Home setActiveLink={setActiveLink} />
+        </Route>
+        <Route path='/winter' exact name='winter'>
+          <Winter setActiveLink={setActiveLink} />
+        </Route>
+        <Route path='/slider' exact name='slider'>
+          <Slider setActiveLink={setActiveLink} />
+        </Route>
+        <Route path='/pagination' exact name='pagination'>
+          <Pagination setActiveLink={setActiveLink} />
+        </Route>
         <Route path='/NotFound' exact name='notFound' component={NotFound}></Route>
         <Redirect to='/NotFound' />
       </Switch>

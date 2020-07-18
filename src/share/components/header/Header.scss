@@ -1,11 +1,13 @@
 /* start navbar */
+$standard-green: #1bbc9d;
+$white-color: white;
 
 .navbar {
   min-height: 9vh;
   font-size: 18px;
   position: relative;
   z-index: 2;
-  background: white;
+  background: $white-color;
   width: 100%;
   position: fixed !important;
   .container {
@@ -20,7 +22,7 @@
 
 .navbar .brand h2 {
   text-transform: uppercase;
-  color: #1bbc9d;
+  color: $standard-green;
   color: black;
 }
 
@@ -34,7 +36,7 @@
   display: inline-block;
   padding: 15px 3px;
   margin: 0px 10px;
-  color: white;
+  color: $white-color;
   border-bottom: 2px solid transparent;
   font-weight: bold;
 }
@@ -47,19 +49,19 @@
 
 .navbar .links li:hover,
 .navbar .links li.active {
-  color: #1bbc9d;
-  border-bottom: 2px solid #1bbc9d;
+  color: $standard-green;
+  border-bottom: 2px solid $standard-green;
   cursor: pointer;
   transition: color 0.7s;
 }
 
 .navbar .links li a:hover,
 .navbar .links li.active a {
-  color: #1bbc9d;
+  color: $standard-green;
 }
 
 .navbar .links li:link {
-  color: white;
+  color: $white-color;
   transition: color 0.7s;
 }
 

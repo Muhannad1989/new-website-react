@@ -11,7 +11,7 @@ const PaginationButton = ({ totalPosts, postsPerPage, paginate }) => {
     <ul className='pagination'>
       {pageNumber.map((num, index) => (
         <li key={index} className='page-item'>
-          <Link onClick={() => paginate(num)} className='page-link'>
+          <Link to='#' onClick={() => paginate(num)} className='page-link'>
             {num}
           </Link>
         </li>

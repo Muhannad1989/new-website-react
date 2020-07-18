@@ -4,8 +4,11 @@ import Button from "./Button";
 import "./Winter.scss";
 // import Container from "../../share/components/container/Container";
 
-const Winter = ({ match, setActiveLink }) => {
-  // setActiveLink(match.path);
+const Winter = ({ match, history, setActiveLink }) => {
+  // console.log(match.path);
+  // if (match.path === "") {
+  // console.log("homePage");
+  // }
   const createSnow = (num) => {
     let snow = [];
     for (var i = 0; i < num; i++) {
@@ -15,8 +18,8 @@ const Winter = ({ match, setActiveLink }) => {
   };
 
   useEffect(() => {
-    console.log("test");
-  }, []);
+    setActiveLink("winter");
+  }, [setActiveLink]);
 
   return (
     <Fragment>
@@ -27,9 +30,9 @@ const Winter = ({ match, setActiveLink }) => {
               <div className='left box'>
                 <h2>We provide solutions for your business!</h2>
                 <div className='buttons'>
-                  <Button />
-                  <Button />
-                  <Button />
+                  <Button text='View' />
+                  <Button text='Over view' />
+                  <Button text='Context' />
                 </div>
               </div>
               <div className='right box'></div>

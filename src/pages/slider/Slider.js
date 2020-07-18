@@ -3,11 +3,11 @@ import Container from "../../share/components/container/Container";
 
 import "./Slider.scss";
 const Slider = ({ match, history, setActiveLink }) => {
-  console.log(match.path);
-  console.log(history.location.pathname);
-  useEffect(() => {
-    // setActiveLink("test");
-  });
+  // console.log(match.path);
+  // console.log(history.location.pathname);
+  // useEffect(() => {
+  //  setActiveLink("test");
+  // });
   const images = [
     "https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png",
     "https://images.squarespace-cdn.com/content/v1/5a5906400abd0406785519dd/1547305833918-3GKETBUWRDXCEC6P5C2N/ke17ZwdGBToddI8pDm48kKAwwdAfKsTlKsCcElEApLR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UegTYNQkRo-Jk4EWsyBNhwKrKLo5CceA1-Tdpfgyxoog5ck0MD3_q0rY3jFJjjoLbQ/yenyi.jpg",
@@ -20,7 +20,7 @@ const Slider = ({ match, history, setActiveLink }) => {
     "https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_600,q_75,w_1000/v1/clients/napavalley/Chappellet_Vineyard_Sunset_in_Fall_42eaa7cf-a1f1-4f6b-a260-b6890a6762db.jpg",
     "https://www.royalcaribbeanblog.com/sites/default/files/styles/500px/public/blog-images/Zoom_Background%2012%20-%20Beach%20Sunset.jpg?itok=4jqAH8T5"
   ];
-  console.log("render");
+  // console.log("render");
   // const [counter, setCounter] = useState(1);
   // const size = allImages[0].clientWidth;
   //  transform: `translateX${-size * counter}px`
@@ -30,8 +30,11 @@ const Slider = ({ match, history, setActiveLink }) => {
   const width = 800;
 
   useEffect(() => {
+    // turn link to active
+    setActiveLink("slider");
+    // check size of
     console.log(size);
-  }, [size]);
+  }, [size, setActiveLink]);
 
   const handleNext = () => {
     if (size >= 0) {
