@@ -19,8 +19,8 @@ const Header = ({ active }) => {
             </Link>
           </li>
           <li>
-            <Link to='/about' data-value='about'>
-              About
+            <Link to='/winter' data-value='winter'>
+              Winter
             </Link>
           </li>
           <li>

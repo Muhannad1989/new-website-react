@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import Snow from "./Snow";
-import "./About.scss";
+import Button from "./Button";
+import "./Winter.scss";
 // import Container from "../../share/components/container/Container";
-// import "../about.scss";
 
-const About = ({ match, setActiveLink }) => {
+const Winter = ({ match, setActiveLink }) => {
   // setActiveLink(match.path);
   const createSnow = (num) => {
     let snow = [];
@@ -13,6 +13,10 @@ const About = ({ match, setActiveLink }) => {
     }
     return snow;
   };
+
+  useEffect(() => {
+    console.log("test");
+  }, []);
 
   return (
     <Fragment>
@@ -23,23 +27,9 @@ const About = ({ match, setActiveLink }) => {
               <div className='left box'>
                 <h2>We provide solutions for your business!</h2>
                 <div className='buttons'>
-                  <a href='photos' target='_blank'>
-                    <div className='first-link'>
-                      <div className='ball' id='ball'></div>
-                      <span className='link' id='link'>
-                        View palns
-                      </span>
-                    </div>
-                  </a>
-
-                  <a href='photos' target='_blank'>
-                    <div className='first-link'>
-                      <div className='ball' id='ball'></div>
-                      <span className='link' id='link'>
-                        View palns
-                      </span>
-                    </div>
-                  </a>
+                  <Button />
+                  <Button />
+                  <Button />
                 </div>
               </div>
               <div className='right box'></div>
@@ -53,4 +43,4 @@ const About = ({ match, setActiveLink }) => {
   );
 };
 
-export default About;
+export default Winter;

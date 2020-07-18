@@ -11,9 +11,8 @@ const Home = () => {
   // }, []);
   return (
     <Container>
-      <div className='container'>
-        <h1>HOME</h1>
-      </div>
+      <h1>HOME</h1>
+      <p>Coming soon...</p>
     </Container>
   );
 };

@@ -1,6 +1,10 @@
 .snow {
   animation: anim 10s linear infinite;
   transition: all 0.5s ease-in-out;
+  font-size: 1rem;
+  line-height: 3.5;
+  color: white;
+  // width: auto !important;
 }
 
 @keyframes anim {

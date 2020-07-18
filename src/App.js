@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 import Header from "./share/components/header/Header";
 import Home from "./pages/home/Home";
-import About from "./pages/about/About";
+import Winter from "./pages/winter/Winter";
 import Slider from "./pages/slider/Slider";
 import Pagination from "./pages/pagination/Pagination";
 import NotFound from "./pages/notFound/NotFound";
+
+import "bootstrap/scss/bootstrap.scss";
 import "./App.scss";
 import "./share/style/grideSystem.scss";
-import "bootstrap/scss/bootstrap.scss";
 
 const App = () => {
   const [active, setActive] = useState(null);
@@ -22,7 +23,7 @@ const App = () => {
       <Switch>
         <Route path='/' exact name='home' component={Home}></Route>
         <Route path='/home' exact name='home' component={Home}></Route>
-        <Route path='/about' exact name='about' component={About}></Route>
+        <Route path='/winter' exact name='winter' component={Winter}></Route>
         <Route
           path='/slider'
           exact
