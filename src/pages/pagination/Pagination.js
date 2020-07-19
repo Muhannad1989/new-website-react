@@ -1,11 +1,14 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useEffect, useState, Fragment, useContext } from "react";
 import axios from "axios";
 import Container from "../../share/components/container/Container";
 import PaginationContent from "./PaginationContent";
 import PaginationButtons from "./PaginationButtons";
+import { CurrentPageContext } from "../../share/context/current-page";
 import "./Pagination.scss";
 
 const Pagination = ({ setActiveLink }) => {
+  const current = useContext(CurrentPageContext);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
   const [posts, setPosts] = useState([]);
@@ -16,6 +19,7 @@ const Pagination = ({ setActiveLink }) => {
   useEffect(() => {
     fetchData();
     setActiveLink("pagination");
+    current.setCurrentPage("pagination");
   }, [setActiveLink]);
 
   const url = "https://jsonplaceholder.typicode.com/posts";

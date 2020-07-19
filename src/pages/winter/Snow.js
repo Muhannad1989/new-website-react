@@ -21,6 +21,7 @@ const Snow = () => {
     // console.log(experience[randonNumber]);
     return experience[randonNumber];
   };
+
   const style = () => {
     let size = Math.floor(Math.random() * 5) + "vw";
     let opacitySize = Math.floor(Math.random() * 9);
@@ -30,19 +31,20 @@ const Snow = () => {
       height: size,
       opacity: `0.${opacitySize}`,
       borderRadius: "50%",
-      animationDelay: Math.floor(Math.random() * 10) + "s",
-      // backgroundColor: "red",
-      // background: "white",
+      background: "white",
       position: "absolute",
-      // transform: "rotate(40deg)",
-      transform: "rotate(0deg)",
-      transition: "all 0.5s ease-in-out"
+      // transform: "rotate(0deg)",
+      transform: "rotate(40deg)",
+      // animationDelay: Math.floor(Math.random() * 100) + "s",
+      animation: `anim ${Math.floor(Math.random() * 100)}s linear infinite`,
+      transition: "all 1s ease-in-out"
     };
   };
+
   return (
     <Fragment>
       <div className='snow' style={style()}>
-        {choseExperience()}
+        {/* {choseExperience()} */}
       </div>
     </Fragment>
   );

@@ -52,11 +52,13 @@ $white-color: white;
   color: $standard-green;
   border-bottom: 2px solid $standard-green;
   cursor: pointer;
-  transition: color 0.7s;
+  transition: all 0.4s ease-in-out;
 }
 
 .navbar .links li a:hover,
 .navbar .links li.active a {
+  transition: all 0.4s ease-in-out;
+
   color: $standard-green;
 }
 

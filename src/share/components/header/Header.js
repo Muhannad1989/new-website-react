@@ -1,8 +1,15 @@
-import React from "react";
-// import Container from "../../components/container/Container";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+
+import { CurrentPageContext } from "../../context/current-page";
+
+import CustomLink from "./CustomLink";
 import "./Header.scss";
+
 const Header = ({ active }) => {
+  const current = useContext(CurrentPageContext);
+  // log current page name
+  console.log(`current page is : ${current.currentPage}`);
+  const links = ["home", "winter", "slider", "pagination"];
   return (
     <div className='navbar'>
       <div className='container'>
@@ -10,26 +17,9 @@ const Header = ({ active }) => {
           <h2>Classic</h2>
         </div>
         <ul className='links'>
-          <li className={active === "home" ? "active" : ""}>
-            <Link to='/' data-value='home'>
-              Home
-            </Link>
-          </li>
-          <li className={active === "winter" ? "active" : ""}>
-            <Link to='/winter' data-value='winter'>
-              Winter
-            </Link>
-          </li>
-          <li className={active === "slider" ? "active" : ""}>
-            <Link to='/slider' data-value='slider'>
-              Slider
-            </Link>
-          </li>
-          <li className={active === "pagination" ? "active" : ""}>
-            <Link to='/pagination' data-value='pagination'>
-              Pagination
-            </Link>
-          </li>
+          {links.map((ele, index) => (
+            <CustomLink key={index} checker={current.currentPage} name={ele} />
+          ))}
         </ul>
       </div>
     </div>

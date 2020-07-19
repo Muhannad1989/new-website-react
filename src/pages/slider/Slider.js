@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Container from "../../share/components/container/Container";
+import { CurrentPageContext } from "../../share/context/current-page";
 
 import "./Slider.scss";
 const Slider = ({ match, history, setActiveLink }) => {
+  const current = useContext(CurrentPageContext);
   // console.log(match.path);
   // console.log(history.location.pathname);
   // useEffect(() => {
@@ -34,6 +36,7 @@ const Slider = ({ match, history, setActiveLink }) => {
     setActiveLink("slider");
     // check size of
     console.log(size);
+    current.setCurrentPage("slider");
   }, [size, setActiveLink]);
 
   const handleNext = () => {

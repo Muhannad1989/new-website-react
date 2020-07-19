@@ -1,14 +1,12 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useContext } from "react";
 import Snow from "./Snow";
 import Button from "./Button";
+import Photos from "./Photos";
 import "./Winter.scss";
-// import Container from "../../share/components/container/Container";
+import { CurrentPageContext } from "../../share/context/current-page";
 
 const Winter = ({ match, history, setActiveLink }) => {
-  // console.log(match.path);
-  // if (match.path === "") {
-  // console.log("homePage");
-  // }
+  const current = useContext(CurrentPageContext);
   const createSnow = (num) => {
     let snow = [];
     for (var i = 0; i < num; i++) {
@@ -19,6 +17,7 @@ const Winter = ({ match, history, setActiveLink }) => {
 
   useEffect(() => {
     setActiveLink("winter");
+    current.setCurrentPage("winter");
   }, [setActiveLink]);
 
   return (
@@ -39,6 +38,7 @@ const Winter = ({ match, history, setActiveLink }) => {
             </div>
             {createSnow(100)}
             <div className='wave'></div>
+            <h2>xxxxxxxxxxx</h2>
           </div>
         </div>
       </div>
