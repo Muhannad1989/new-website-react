@@ -18,3 +18,22 @@
 .page-link a:hover {
   background-color: red;
 }
+
+.scroll-up {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+.scroll-up:hover {
+  cursor: pointer;
+}
+.scroll-up:focus {
+  outline: none;
+}

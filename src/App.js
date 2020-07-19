@@ -16,7 +16,28 @@ import "./share/style/grideSystem.scss";
 const App = () => {
   const [active, setActiveLink] = useState("");
   const [currentPage, setCurrentPage] = useState("");
+  const [navbarShrink, setNavbarShrink] = useState({});
+  const [scrollButton, setScrollButton] = useState({});
 
+  window.onscroll = () => {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      setScrollButton({ display: "block" });
+    } else {
+      setScrollButton({ display: "none" });
+    }
+
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      setNavbarShrink({
+        navbar: { padding: "30px 10px", backgroundColor: "#ffffffcc" },
+        logo: { color: "#1bbc9d" }
+      });
+    } else {
+      // reset (back to old style which remove additional style)
+      setNavbarShrink({});
+    }
+  };
+
+  // active current page
   const setCurrentPageFun = useCallback((e) => {
     setCurrentPage(e);
   }, []);
@@ -26,7 +47,7 @@ const App = () => {
       value={{ currentPage: currentPage, setCurrentPage: setCurrentPageFun }}
     >
       <Router>
-        <Header active={active} />
+        <Header active={active} navbarShrink={navbarShrink} />
         <Switch>
           <Route path='/' exact name='home'>
             <Home setActiveLink={setActiveLink} />
@@ -41,7 +62,7 @@ const App = () => {
             <Slider setActiveLink={setActiveLink} />
           </Route>
           <Route path='/pagination' exact name='pagination'>
-            <Pagination setActiveLink={setActiveLink} />
+            <Pagination scrollButton={scrollButton} setActiveLink={setActiveLink} />
           </Route>
           <Route path='/NotFound' exact name='notFound' component={NotFound}></Route>
           <Redirect to='/NotFound' />

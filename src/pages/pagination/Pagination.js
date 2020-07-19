@@ -6,7 +6,7 @@ import PaginationButtons from "./PaginationButtons";
 import { CurrentPageContext } from "../../share/context/current-page";
 import "./Pagination.scss";
 
-const Pagination = ({ setActiveLink }) => {
+const Pagination = ({ setActiveLink, scrollButton }) => {
   const current = useContext(CurrentPageContext);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -37,6 +37,17 @@ const Pagination = ({ setActiveLink }) => {
       <div>
         {posts.length > 0 ? (
           <Fragment>
+            <button
+              onClick={() => {
+                // document.body.scrollTop = 0;
+                // document.documentElement.scrollTop = 0;
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className='scroll-up'
+              style={scrollButton}
+            >
+              Scroll up
+            </button>
             <PaginationContent posts={currentPosts} />
             <PaginationButtons
               currentPosts={currentPosts}

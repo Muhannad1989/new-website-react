@@ -5,16 +5,18 @@ import { CurrentPageContext } from "../../context/current-page";
 import CustomLink from "./CustomLink";
 import "./Header.scss";
 
-const Header = ({ active }) => {
+const Header = ({ active, navbarShrink: { logo, navbar } }) => {
   const current = useContext(CurrentPageContext);
   // log current page name
   console.log(`current page is : ${current.currentPage}`);
+  console.log({ logo, navbar });
+
   const links = ["home", "winter", "slider", "pagination"];
   return (
-    <div className='navbar'>
+    <div className='navbar' style={navbar}>
       <div className='container'>
         <div className='brand'>
-          <h2>Classic</h2>
+          <h2 style={logo}>Classic</h2>
         </div>
         <ul className='links'>
           {links.map((ele, index) => (
