@@ -60,6 +60,7 @@ $width: 800px;
   cursor: pointer;
 }
 
-button:focus {
+.previous:focus,
+.next:focus {
   outline: none;
 }
