@@ -11,7 +11,7 @@ const Header = ({ active, navbarShrink: { logo, navbar } }) => {
   console.log(`current page is : ${current.currentPage}`);
   console.log({ logo, navbar });
 
-  const links = ["home", "winter", "slider", "pagination"];
+  const links = ["home", "winter", "slider", "pagination", "counter"];
   return (
     <div className='navbar' style={navbar}>
       <div className='container'>

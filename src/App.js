@@ -5,9 +5,12 @@ import Home from "./pages/home/Home";
 import Winter from "./pages/winter/Winter";
 import Slider from "./pages/slider/Slider";
 import Pagination from "./pages/pagination/Pagination";
+import Counter from "./pages/counter/Counter";
 import NotFound from "./pages/notFound/NotFound";
 
 import { CurrentPageContext } from "./share/context/current-page";
+
+// redux
 
 import "bootstrap/scss/bootstrap.scss";
 import "./App.scss";
@@ -63,6 +66,9 @@ const App = () => {
           </Route>
           <Route path='/pagination' exact name='pagination'>
             <Pagination scrollButton={scrollButton} setActiveLink={setActiveLink} />
+          </Route>
+          <Route path='/counter' exact name='counter'>
+            <Counter scrollButton={scrollButton} setActiveLink={setActiveLink} />
           </Route>
           <Route path='/NotFound' exact name='notFound' component={NotFound}></Route>
           <Redirect to='/NotFound' />
