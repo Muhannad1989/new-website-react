@@ -29,7 +29,7 @@ const App = () => {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
       setNavbarShrink({
         navbar: { padding: "30px 10px", backgroundColor: "#ffffffcc" },
-        logo: { color: "#1bbc9d" }
+        logo: { color: "#1bbc9d", fontSize: "2.1em" }
       });
     } else {
       // reset (back to old style which remove additional style)
